@@ -17,5 +17,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Webhook
       uses: distributhor/workflow-webhook@v3
-      with:
+      env:
         webhook_url: "http://e1dd-185-189-25-166.ngrok.io"
