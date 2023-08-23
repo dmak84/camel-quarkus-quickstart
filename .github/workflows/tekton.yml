@@ -18,4 +18,5 @@ jobs:
     - name: Webhook
       uses: distributhor/workflow-webhook@v3
       env:
+        webhook_type: 'json-extended'
         webhook_url: "http://e1dd-185-189-25-166.ngrok.io"
