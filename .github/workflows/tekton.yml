@@ -18,5 +18,4 @@ jobs:
     - name: Webhook
       uses: distributhor/workflow-webhook@v3
       with:
-        url: "http://e1dd-185-189-25-166.ngrok.io"
-        json: '{ "repository": "${{github.event.repository.full_name}}", "number": "${{github.event.number}}", "created_at": "${{github.event.pull_request.created_at}}", "updated_at": "${{github.event.pull_request.updated_at}}" }'
+        webhook_url: "http://e1dd-185-189-25-166.ngrok.io"
