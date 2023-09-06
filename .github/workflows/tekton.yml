@@ -20,6 +20,7 @@ jobs:
       run: |
         ls
         pwd
+        cat .github/actions/hello/action.yml
     # Runs a single command using the runners shell
     - name: Webhook
       uses: distributhor/workflow-webhook@v3.0.5
