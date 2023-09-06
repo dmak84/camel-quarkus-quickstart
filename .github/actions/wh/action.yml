@@ -40,7 +40,7 @@ runs:
       run: |
         echo "webhook_url=${{ inputs.webhook_url }}" >> "$GITHUB_ENV"
         echo "webhook_type=${{ inputs.webhook_type }}" >> "$GITHUB_ENV"
-        echo "verbose=${{ inputs.vebose }}" >> "$GITHUB_ENV"
+        echo "verbose=${{ inputs.verbose }}" >> "$GITHUB_ENV"
         echo "verify_ssl=${{ inputs.verify_ssl }}" >> "$GITHUB_ENV"
         echo "curl_opts=${{ inputs.curl_opts }}" >> "$GITHUB_ENV"
         echo "webhook_secret=${{ inputs.webhook_secret }}" >> "$GITHUB_ENV"
