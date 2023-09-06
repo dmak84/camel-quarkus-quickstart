@@ -30,7 +30,7 @@ inputs:
     description: 'Optional, additional data to include in the payload'
 
 outputs:
-  response:
+  response-body:
     description: The response body of the webook response
     value: ${{ steps.entrypoint.outputs.CURL_STATUS }}
 runs:
