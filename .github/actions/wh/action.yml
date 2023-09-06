@@ -48,6 +48,6 @@ runs:
       run: |
         ls
         pwd
-    - run: wh.sh
+    - run: ./.github/actions/wh/wh.sh
       shell: bash
       id: entrypoint
