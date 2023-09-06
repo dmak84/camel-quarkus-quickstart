@@ -4,4 +4,5 @@ pwd
 export
 
 echo "Good Bye"
-echo $who-to-greet
+echo "${{ github.action_path }}"
+echo "${{ inputs.who-to-greet }}"
