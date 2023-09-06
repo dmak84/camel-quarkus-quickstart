@@ -148,7 +148,7 @@ response=$(curl $options \
 CURL_STATUS=$?
 
 # echo "response-body=$response" >> $GITHUB_OUTPUT
-echo "response-body<<$REQUEST_ID" >> $GITHUB_OUTPUT
+# echo "response-body<<$REQUEST_ID" >> $GITHUB_OUTPUT
 echo "$response" >> $GITHUB_OUTPUT
 echo "$REQUEST_ID" >> $GITHUB_OUTPUT
 
