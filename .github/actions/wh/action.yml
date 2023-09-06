@@ -32,7 +32,7 @@ inputs:
 outputs:
   response:
     description: The response body of the webook response
-    value: ${{ steps.entrypoint.outputs.response }}
+    value: ${{ steps.entrypoint.outputs.CURL_STATUS }}
 runs:
   using: "composite"
   steps:
