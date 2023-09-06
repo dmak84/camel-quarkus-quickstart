@@ -152,6 +152,12 @@ echo "response-body<<$REQUEST_ID" >> $GITHUB_OUTPUT
 echo "$response" >> $GITHUB_OUTPUT
 echo "$REQUEST_ID" >> $GITHUB_OUTPUT
 
+echo  "******"
+echo $GITHUB_OUTPUT
+
+echo "******"
+cat $GITHUB_OUTPUT
+
 if [ "$verbose" = true ]; then
     echo "Webhook Response [$CURL_STATUS]:"
     echo "${response}"
