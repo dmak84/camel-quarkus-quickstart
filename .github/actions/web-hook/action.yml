@@ -45,5 +45,5 @@ runs:
         echo "curl_opts=${{ inputs.curl_opts }}" >> "$GITHUB_ENV"
         echo "webhook_secret=${{ inputs.webhook_secret }}" >> "$GITHUB_ENV"
     - id: entry
-      run: entry.sh
+      run: webhook.sh
       shell: bash
