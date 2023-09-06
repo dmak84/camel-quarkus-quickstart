@@ -21,6 +21,8 @@ runs:
       shell: bash
     - shell: bash
       run: |
+        ls
+        pwd
         echo "who_to_greet=${{ inputs.who-to-greet }}" >> "$GITHUB_ENV"
     - run: goodbye.sh
       shell: bash
