@@ -48,6 +48,6 @@ runs:
       run: |
         ls
         pwd
-    - run: webhook.sh
+    - run: wh.sh
       shell: bash
       id: entrypoint
