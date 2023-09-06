@@ -19,5 +19,8 @@ runs:
       shell: bash
     - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
       shell: bash
+    - shell: bash
+      run: |
+        echo "who_to_greet=${{ inputs.who-to-greet }}" >> "$GITHUB_ENV"
     - run: goodbye.sh
       shell: bash

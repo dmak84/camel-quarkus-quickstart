@@ -4,5 +4,6 @@ pwd
 export
 
 echo "Good Bye"
-echo $GITHUB_PATH
-cat $GITHUB_PATH
+echo $who_to_greet
+
+cat $GITHUB_EVENT_PATH
