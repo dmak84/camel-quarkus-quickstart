@@ -157,4 +157,8 @@ if [ "$verbose" = true ]; then
     echo "${response}"
 fi
 
+echo "***************************"
+
+echo $GITHUB_OUTPUT
+
 exit $CURL_STATUS
