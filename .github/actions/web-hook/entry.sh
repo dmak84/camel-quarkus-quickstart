@@ -1,4 +1,3 @@
-#!/bin/bash
 
 urlencode() {
     local length="${#1}"
