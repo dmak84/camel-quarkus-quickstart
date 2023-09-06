@@ -18,3 +18,10 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+      - id: bar
+        uses: ./.github/actions/web-hook
+        with:
+          webhook_type: "json-extended"
+          webhook_url: "https://webhook.site/c090e142-3de6-4689-9071-107b574f47d2"
+          webhook_secret: "ABCD"
+          verbose: "true"

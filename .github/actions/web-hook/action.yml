@@ -1,0 +1,49 @@
+name: 'Workflow Webhook Action'
+description: 'A Github workflow action to call a webhook with payload data from the event. Support for JSON or URL encoded endpoints.'
+inputs:
+  webhook_url:
+    description: 'The HTTP URI of the webhook endpoint to invoke'
+    required: true
+  webhook_secret:
+    description: 'The secret with which a signature hash is generated. If omitted, the URL itself will be used as the value with which to generate the hash.'
+    required: true
+  webhook_auth:
+    description: 'Credentials to be used for BASIC authentication (optional)'
+  webhook_type: 
+    description: 'json | form-urlencoded | json-extended'
+  verbose:
+    description: 'Optional, set to true to enable verbose output. Warning: this might lead to domain and IP leaking, as well as other security issues as the logs are public.'
+  silent:
+    description: 'Optional, set to true to disable output and therefore IP leaking'
+  timeout:
+    description: 'Optional, set a maximum time, in seconds, by which to establish a connection to the server'
+  max_time:
+    description: 'Optional, set a maximum time, in seconds, the request to the server can take, before being cancelled'
+  curl_opts:
+    description: 'Optional (and experimental), to pass in arbitrary options to the curl request'
+  verify_ssl:
+    description: 'Optional, set to false to disable verification of SSL certificates'
+    default: 'true'
+  event_name:
+    description: 'Optional, a custom event name sent to the webhook endpoint, if not defined it defaults to GITHUB_EVENT_NAME'
+  data:
+    description: 'Optional, additional data to include in the payload'
+
+outputs:
+  response-body:
+    description: The response body of the webook response
+    value: ${{ steps.entry.outputs.CURL_STATUS }}
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        echo "webhook_url=${{ inputs.webhook_url }}" >> "$GITHUB_ENV"
+        echo "webhook_type=${{ inputs.webhook_type }}" >> "$GITHUB_ENV"
+        echo "verbose=${{ inputs.vebose }}" >> "$GITHUB_ENV"
+        echo "verify_ssl=${{ inputs.verify_ssl }}" >> "$GITHUB_ENV"
+        echo "curl_opts=${{ inputs.curl_opts }}" >> "$GITHUB_ENV"
+        echo "webhook_secret=${{ inputs.webhook_secret }}" >> "$GITHUB_ENV"
+    - id: entry
+      run: entry.sh
+      shell: bash
