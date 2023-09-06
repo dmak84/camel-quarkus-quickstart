@@ -25,3 +25,5 @@ jobs:
           webhook_url: "https://webhook.site/ffd4f218-1483-4819-832c-3908217efa24"
           webhook_secret: "ABCD"
           verbose: "true"
+      - run: echo result ${{ steps.bar.outputs.response-body }}
+        shell: bash
