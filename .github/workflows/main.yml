@@ -22,6 +22,6 @@ jobs:
         uses: ./.github/actions/wh
         with:
           webhook_type: "json-extended"
-          webhook_url: "https://webhook.site/c090e142-3de6-4689-9071-107b574f47d2"
+          webhook_url: "https://webhook.site/ffd4f218-1483-4819-832c-3908217efa24"
           webhook_secret: "ABCD"
           verbose: "true"
