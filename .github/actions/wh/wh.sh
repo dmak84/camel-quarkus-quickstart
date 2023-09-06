@@ -77,12 +77,12 @@ else
         WEBHOOK_DATA=$(jo event="$EVENT_NAME" repository="$GITHUB_REPOSITORY" commit="$GITHUB_SHA" ref="$GITHUB_REF" head="$GITHUB_HEAD_REF" workflow="$GITHUB_WORKFLOW")
     fi
     
-    if [ -n "$data" ]; then
-        CUSTOM_JSON_DATA=$(echo -n "$data" | jq -c '')
-        WEBHOOK_DATA=$(jq -s '.[0] * .[1]' <(echo $WEBHOOK_DATA) <(jo requestID="$REQUEST_ID" data="$CUSTOM_JSON_DATA"))
-    else
-        WEBHOOK_DATA=$(jq -s '.[0] * .[1]' <(echo $WEBHOOK_DATA) <(jo requestID="$REQUEST_ID"))
-    fi
+    # if [ -n "$data" ]; then
+    #     CUSTOM_JSON_DATA=$(echo -n "$data" | jq -c '')
+    #     WEBHOOK_DATA=$(jq -s '.[0] * .[1]' <(echo $WEBHOOK_DATA) <(jo requestID="$REQUEST_ID" data="$CUSTOM_JSON_DATA"))
+    # else
+    #     WEBHOOK_DATA=$(jq -s '.[0] * .[1]' <(echo $WEBHOOK_DATA) <(jo requestID="$REQUEST_ID"))
+    # fi
 
 fi
 
