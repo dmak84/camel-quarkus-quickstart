@@ -159,6 +159,6 @@ fi
 
 echo "***************************"
 
-echo $GITHUB_OUTPUT
+cat $GITHUB_OUTPUT
 
 exit $CURL_STATUS
